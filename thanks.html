@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ 
+</head>
+
+<style>
+h1 {text-align: center;}
+h4 {text-align: Center;}
+* {box-sizing:border-box}
+
+
+
+}
+
+
+
+</style>
+<body> 
+<div class="slideshow-container">
+<div class="center-container">
+ 	
+	
+			
+<h4 id="fname">Dear <span id="UserName"></span>,</h4>
+<h4> Thank you for your enquiry. A four digit verification number sent to your email : <span id="Email"></span>,<br>
+Please enter in the following box and submit for confirmation.</h4>
+
+		<h3>verify OTP</h3>
+		
+ 	<input type="text" name="tb2" required placeholder="Enter OTP" id="tb2"/>
+		
+
+		
+		<button  onclick="checkOtp()" > Validate OTP </button>  <h3><span id="attempt">0</span> otp attempt</h3>
+
+  
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+     
+	
+
+<Script>
+
+	
+	document.getElementById("UserName").innerHTML = sessionStorage.getItem("Name");
+	document.getElementById("Email").innerHTML = sessionStorage.getItem("Email");
+
+
+</Script>
+</div>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="scripts.js"></script>
+
+
+</body>
+</html>

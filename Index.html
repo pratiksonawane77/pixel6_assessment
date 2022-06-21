@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+ 
+</head>
+ <div class="center">
+ <h1 id="ApplicationHeading">Loan Applicaton</h1>
+
+<body>
+
+
+            <div class="container">
+
+
+      <label for="fname">First Name</label>
+	<input type="text" id="fname" name="firtname" aria-describedby="name-format" required placeholder="Your First name...">
+		
+		
+	
+
+    <label for="lname">Last Name</label>
+	<input type="text" id="lname" name="lastname" aria-describedby="name-format" required placeholder="Your Last name...">
+		
+		
+
+<label for="email">Email</label>
+	<input type="text" id="email" name="Email" aria-describedby="name-format" onfocusout="validateMe()" required placeholder="xyz@gmail.com">
+    
+	
+	
+    <label for="subject">PAN</label>
+		<input type="text" id="pan" name="PAN" onfocusout="validatePan()" required placeholder="Your PAN no..">
+		
+ <label for="subject">LOAN AMOUNT</label>
+ <input type="text" id="number" name="numbe" maxlength="9"  required placeholder="Enter Your Loan Amount..">
+<span id="words"></span>
+ 
+ 
+		<h3>Check Captcha</h3>
+		<h1 id="captcha">Check Captcha</h1>
+		
+		
+		
+		<button  onclick="refreshCaptcha()" > refresh captcha </button>
+		
+		<input type="text" name="tb1"  required placeholder="Enter Captcha" id="tb1"/>
+		
+		
+		
+		<button  onclick="pratikFunction()" > check </button><h5 id="otpMsg"></h5>
+
+		<button  onclick="submitMyForm()" > submit </button>
+
+		
+		
+		
+</div>
+
+		<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="scripts.js"></script>
+
+<Script>
+
+ document.getElementById('number').onkeyup = function () {
+    document.getElementById('words').innerHTML = inWords(document.getElementById('number').value);
+};
+
+document.getElementById("captcha").innerHTML = locCaptcha;
+
+
+var myEmail= document.getElementById("email").value;
+function validateEmail() 
+    {
+        var re = /\S+@\S+\.\S+/;  
+        return re.test(myEmail);
+    }
+	
+function validateMe()
+{
+	if(validateEmail)
+	{
+			console.log("Email validated");
+	}
+	{
+		alert("invalid email");
+	}
+
+}
+
+function validatePan()
+{
+	var panVal = document.getElementById("pan").value;
+	var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+
+	if(regpan.test(panVal)){
+	   console.log("pan validated");
+	} else {
+	   alert("invalid pan card no");
+	}
+}
+  
+ </Script>
+   
+	
+	
+
+
+</div>
+ 
+</body>
+</html>
