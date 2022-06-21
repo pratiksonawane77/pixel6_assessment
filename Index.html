@@ -25,7 +25,7 @@
 		
 
 <label for="email">Email</label>
-	<input type="text" id="email" name="Email" aria-describedby="name-format" onfocusout="validateMe()" required placeholder="xyz@gmail.com">
+	<input type="text" id="email" name="Email" aria-describedby="name-format" onfocusout="" required placeholder="xyz@gmail.com">
     
 	
 	
@@ -90,6 +90,7 @@ function validateMe()
 
 function validatePan()
 {
+validateMe();
 	var panVal = document.getElementById("pan").value;
 	var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
 
