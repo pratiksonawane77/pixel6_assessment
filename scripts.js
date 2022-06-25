@@ -75,55 +75,95 @@ function pratikFunction() {
 	checkCaptcha();
 }
 
-function submitMyForm() {
+function validateFN() {
 	var name = document.getElementById("fname").value;
 
-	var lname = document.getElementById("lname").value;
-
-	var email = document.getElementById("email").value;
-
-	var pan = document.getElementById("pan").value;
-
-	var number = document.getElementById("number").value;
-	var regEmail = /\S+@\S+\.\S+/;
-	var regPan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
 	if (name == null || name == "") {
-		alert("Please enter First Name");
+		document.getElementById("inputTipFN").innerHTML = "Please enter First Name" ;
+		document.getElementById("inputTipFN").style.color = "red" ;
 		document.getElementById("fname").focus();
 	}
-	else if (lname == null || lname == "") {
-		alert("Please enter Last Name");
+	else{
+		document.getElementById("inputTipFN").innerHTML = "Correct..!" ;
+		document.getElementById("inputTipFN").style.color = "green" ;
+	}
+}
+function validateLN() {
+	var lname = document.getElementById("lname").value;
+
+	if (lname == null || lname == "") {
+		document.getElementById("inputTipLN").innerHTML = "Please enter Last Name" ;
+		document.getElementById("inputTipLN").style.color = "red" ;
 		document.getElementById("lname").focus();
 	}
-	else if (!regEmail.test(email)) {
-		alert("invalid email please check");
+	else{
+		document.getElementById("inputTipLN").innerHTML = "Correct..!" ;
+		document.getElementById("inputTipLN").style.color = "green" ;
+	}
+}
+
+function validateEmail() {
+	var email = document.getElementById("email").value;
+	var regEmail = /\S+@\S+\.\S+/;
+
+	if (!regEmail.test(email)) {
+		document.getElementById("inputTipEmail").innerHTML = "Please enter valid Email";
+		document.getElementById("inputTipEmail").style.color = "red" ;
 		document.getElementById("email").focus();
 	}
 	else if (email == null || email == "") {
 		
-		alert("Please enter valid Email");
+		document.getElementById("inputTipEmail").innerHTML = "Please enter valid Email";
+		document.getElementById("inputTipEmail").style.color = "red" ;
 		document.getElementById("email").focus();
 	}
-	else if (!regPan.test(pan)) {
-		alert("invalid PAN Number please check");
+	else  {
+		document.getElementById("inputTipEmail").innerHTML = "Correct..!" ;
+		document.getElementById("inputTipEmail").style.color = "green" ;
+	}
+}
+
+function validatePan() {
+	var pan = document.getElementById("pan").value;
+	var regPan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+
+	if (!regPan.test(pan)) {
+		document.getElementById("inputTipPan").innerHTML = "Please enter valid Pan";		
+		document.getElementById("inputTipPan").style.color = "red" ;
 		document.getElementById("pan").focus();
 	}
 	else if (pan == null || pan == "") {
-		validatePan();
-		alert("Please enter valid PAN number");
+		
+		document.getElementById("inputTipPan").innerHTML = "Please enter valid Pan";
+		document.getElementById("inputTipPan").style.color = "red" ;
+		
 		document.getElementById("pan").focus();
 	}
-	else if (number == null || number == "") {
-		alert("Please enter Loan Amount");
+	else  {
+		document.getElementById("inputTipPan").innerHTML = "Correct..!" ;
+		document.getElementById("inputTipPan").style.color = "green" ;
+	}
+}
+function validateNumber() {
+	var number = document.getElementById("number").value;
+
+	if (number == null || number == "") {
+		document.getElementById("inputTipAmount").innerHTML = "Please enter Loan Amount" ;
+		document.getElementById("inputTipAmount").style.color = "red" ;
 		document.getElementById("number").focus();
 	}
-	else {
+	else{
+		document.getElementById("inputTipAmount").innerHTML =  "Correct..!" ;
+		document.getElementById("inputTipAmount").style.color = "green" ;
+	}
+}
 
+function submitMyForm() {
+	
 		sessionStorage.setItem("Name", name);  //session obejct for storing data to access on diff pages.
 		sessionStorage.setItem("Email", email);
-
 		window.location.href = "thanks.html";
-	}
+	
 }
 
 

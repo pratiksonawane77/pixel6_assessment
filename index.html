@@ -8,22 +8,27 @@
 		<div class="container">
 
 			<label for="fname">First Name</label>
-			<input type="text" id="fname" name="firtname" aria-describedby="name-format" required
+			<input type="text" id="fname" name="firtname" onkeyup="validateFN()" aria-describedby="name-format" required
 				placeholder="Your First name...">
+			<span id="inputTipFN"></span><br>
 
 			<label for="lname">Last Name</label>
-			<input type="text" id="lname" name="lastname" aria-describedby="name-format" required
+			<input type="text" id="lname" name="lastname" onkeyup="validateLN()" aria-describedby="name-format" required
 				placeholder="Your Last name...">
+				<span id="inputTipLN"></span><br>
 
 			<label for="email">Email</label>
-			<input type="text" id="email" name="Email" aria-describedby="name-format" onfocusout="" required
+			<input type="text" id="email" name="Email" onkeyup="validateEmail()" aria-describedby="name-format" onfocusout="" required
 				placeholder="xyz@gmail.com">
+				<span id="inputTipEmail"></span><br>
 
 			<label for="subject">PAN</label>
-			<input type="text" id="pan" name="PAN"  required placeholder="Your PAN no..">
+			<input type="text" id="pan" name="PAN" onkeyup="validatePan()"  required placeholder="Your PAN no..">
+			<span id="inputTipPan"></span><br>
 
 			<label for="subject">LOAN AMOUNT</label>
-			<input type="text" id="number" name="numbe" maxlength="9" required placeholder="Enter Your Loan Amount..">
+			<input type="text" id="number" name="numbe" onkeydown="validateNumber()" maxlength="9" required placeholder="Enter Your Loan Amount..">
+			<span id="inputTipAmount"></span><br>
 			<span id="words"></span>
 
 			<h3>Check Captcha</h3>
