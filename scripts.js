@@ -160,6 +160,9 @@ function validateNumber() {
 
 function submitMyForm() {
 	
+		var name = document.getElementById("fname").value;
+		var email = document.getElementById("email").value;
+	
 		sessionStorage.setItem("Name", name);  //session obejct for storing data to access on diff pages.
 		sessionStorage.setItem("Email", email);
 		window.location.href = "thanks.html";
@@ -184,4 +187,3 @@ function showSlides(n) {
 	slides[slideIndex - 1].style.display = "block";
 	dots[slideIndex - 1].className += " active";
 }
-
